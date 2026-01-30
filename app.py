@@ -28,6 +28,7 @@ def load_resources():
 
     model = joblib.load(model_path)
     preprocessor = joblib.load(preproc_path)
+
     # Load a sample row to use as a template for features
     df_sample = pd.read_csv(data_path).drop(columns=['SalePrice', 'Order', 'PID']).iloc[0:1]
     return model, preprocessor, df_sample
@@ -54,6 +55,7 @@ col1, col2 = st.columns(2)
 with col1:
     overall_qual = st.slider("Overall Quality (1-10)", 1, 10, 6)
     gr_liv_area = st.number_input("Above Ground Living Area (sq ft)", 500, 10000, 1500)
+
     year_built = st.number_input("Year Built", 1870, 2010, 1970)
     total_bsmt_sf = st.number_input("Total Basement Area (sq ft)", 0, 6000, 1000)
 
@@ -63,6 +65,7 @@ with col2:
         'Edwards', 'Gilbert', 'Greens', 'GrnHill', 'IDOTRR', 'Landmrk', 'MeadowV',
         'Mitchel', 'NAmes', 'NPkVill', 'NWAmes', 'NoRidge', 'NridgHt', 'OldTown',
         'SWISU', 'Sawyer', 'SawyerW', 'Somerst', 'StoneBr', 'Timber', 'Veenker'
+
     ], index=15) # Default to NAmes
     garage_cars = st.slider("Garage Capacity (Cars)", 0, 5, 2)
     full_bath = st.slider("Full Bathrooms", 0, 4, 2)
@@ -97,7 +100,6 @@ if st.button("Predict Price"):
     **Note:** This is an estimate based on a machine learning model.
     Actual prices may vary depending on market conditions and other factors not captured here.
     """)
-
 # Footer
 st.markdown("---")
 st.write("Developed for the ML Course Final Project - 2026")
