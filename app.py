@@ -93,3 +93,11 @@ if st.button("Predict Price"):
 
     # 5. Show results
     st.success(f"### Predicted Sale Price: ${prediction:,.2f}")
+    st.info("""
+    **Note:** This is an estimate based on a machine learning model.
+    Actual prices may vary depending on market conditions and other factors not captured here.
+    """)
+
+# Footer
+st.markdown("---")
+st.write("Developed for the ML Course Final Project - 2026")
