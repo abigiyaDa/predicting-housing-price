@@ -84,4 +84,12 @@ if st.button("Predict Price"):
     input_df['Full Bath'] = full_bath
     input_df['Fireplaces'] = fireplaces
 
-  
+    # 3. Preprocess
+    with st.spinner('Calculating...'):
+        input_processed = preprocessor.transform(input_df)
+
+        # 4. Predict
+        prediction = model.predict(input_processed)[0]
+
+    # 5. Show results
+    st.success(f"### Predicted Sale Price: ${prediction:,.2f}")
