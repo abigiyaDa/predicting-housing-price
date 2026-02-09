@@ -59,7 +59,8 @@ The **Random Forest** model performed slightly better than the Linear Regression
 
 ## 9. Deployment
 A simple interactive web app built with **Streamlit** allows users to input house details and get an instant price prediction.
-* **Launch:** `streamlit run [app.py](app.py)`
+* **Launch:** `streamlit run app.py`
+* Deployed App: https://predicting-housing-price-project.streamlit.app/
 
 ## 10. How to Run the Project
 1. **Clone the repository.**
